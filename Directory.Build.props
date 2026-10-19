@@ -1,0 +1,19 @@
+<Project>
+  <!-- vcpkg integration for C++ projects (works in Rider, Visual Studio, and command-line MSBuild).
+       Requires the VCPKG_ROOT environment variable, or VcpkgRoot passed as an MSBuild property. -->
+  <PropertyGroup Condition="'$(MSBuildProjectExtension)' == '.vcxproj'">
+    <VcpkgRoot Condition="'$(VcpkgRoot)' == ''">$(VCPKG_ROOT)\</VcpkgRoot>
+    <VcpkgEnableManifest>true</VcpkgEnableManifest>
+  </PropertyGroup>
+  <!-- Headers included with <angle brackets> (standard library, vcpkg packages) are external:
+       their warnings are suppressed so /W4 /WX applies only to our own code ("quoted" includes). -->
+  <ItemDefinitionGroup Condition="'$(MSBuildProjectExtension)' == '.vcxproj'">
+    <ClCompile>
+      <TreatAngleIncludeAsExternal>true</TreatAngleIncludeAsExternal>
+      <ExternalWarningLevel>TurnOffAllWarnings</ExternalWarningLevel>
+      <ExternalTemplatesDiagnostics>false</ExternalTemplatesDiagnostics>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <Import Project="$(VcpkgRoot)scripts\buildsystems\msbuild\vcpkg.props"
+          Condition="'$(MSBuildProjectExtension)' == '.vcxproj' And Exists('$(VcpkgRoot)scripts\buildsystems\msbuild\vcpkg.props')" />
+</Project>

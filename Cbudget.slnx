@@ -1,0 +1,11 @@
+<Solution>
+  <Configurations>
+    <Platform Name="x64" />
+  </Configurations>
+  <Folder Name="/src/">
+    <Project Path="src/Core/Cbudget.Core.vcxproj" Id="6f1d2a3b-4c5e-4f60-8a71-92b3c4d5e6f7" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/Core.Tests/Cbudget.Core.Tests.vcxproj" Id="7a2e3b4c-5d6f-4071-9b82-a3c4d5e6f708" />
+  </Folder>
+</Solution>

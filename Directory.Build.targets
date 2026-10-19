@@ -1,0 +1,10 @@
+<Project>
+  <Import Project="$(VcpkgRoot)scripts\buildsystems\msbuild\vcpkg.targets"
+          Condition="'$(MSBuildProjectExtension)' == '.vcxproj' And Exists('$(VcpkgRoot)scripts\buildsystems\msbuild\vcpkg.targets')" />
+
+  <!-- Fail early with a clear message instead of "cannot open include file" when vcpkg is not found. -->
+  <Target Name="CbudgetCheckVcpkg" BeforeTargets="PrepareForBuild"
+          Condition="'$(MSBuildProjectExtension)' == '.vcxproj' And !Exists('$(VcpkgRoot)scripts\buildsystems\msbuild\vcpkg.targets')">
+    <Error Text="vcpkg not found. Set the VCPKG_ROOT environment variable (for example C:\Program Files\Microsoft Visual Studio\18\Community\VC\vcpkg) and restart your IDE or terminal. Current VcpkgRoot: '$(VcpkgRoot)'" />
+  </Target>
+</Project>

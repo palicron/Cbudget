@@ -21,6 +21,9 @@ obj/
 *.VC.db
 *.VC.opendb
 
+# JetBrains Rider
+.idea/
+
 # vcpkg
 vcpkg_installed/
 
