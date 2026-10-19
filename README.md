@@ -73,3 +73,7 @@ In early development. The design and the plan for the C++ core are done; impleme
 | 3. Interop DLL | planned |
 | 4. WinUI 3 application | planned |
 | 5. Bank statement import | planned |
+
+## License
+
+[MIT](LICENSE)
