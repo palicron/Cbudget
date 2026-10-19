@@ -1,0 +1,39 @@
+# Build output
+x64/
+x86/
+ARM64/
+Debug/
+Release/
+bin/
+obj/
+*.pdb
+*.ilk
+*.obj
+*.iobj
+*.ipdb
+*.tlog
+*.lastbuildstate
+
+# Visual Studio
+.vs/
+*.user
+*.suo
+*.VC.db
+*.VC.opendb
+
+# vcpkg
+vcpkg_installed/
+
+# Personal financial data: never commit
+*.db
+*.sqlite
+*.sqlite3
+*.db-journal
+*.db-wal
+*.db-shm
+private/
+
+# Claude Code files (agents, rules, generated design docs): kept local only
+.claude/
+CLAUDE.md
+docs/

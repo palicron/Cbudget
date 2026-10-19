@@ -1,0 +1,7 @@
+# Normalize line endings in the repository; Visual Studio files keep CRLF on checkout.
+* text=auto
+*.sln     text eol=crlf
+*.slnx    text eol=crlf
+*.vcxproj text eol=crlf
+*.filters text eol=crlf
+*.csproj  text eol=crlf
